@@ -742,7 +742,6 @@ Please refer to the [LICENSE](LICENSE) file for the licensing terms of this proj
 **AI Researcher | Agentic AI | LLM Systems | Trustworthy AI**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Miraj--Rahman--AI-181717?logo=github)](https://github.com/Miraj-Rahman-AI)
-
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/miraj-rahman-ai/)
 
 </div>
@@ -757,6 +756,5 @@ Please refer to the [LICENSE](LICENSE) file for the licensing terms of this proj
 
 *Exploring Intelligent Career Discovery Through Agentic AI.*
 
-If you find this project useful for learning, research, or development, consider giving it a ⭐.
 
 </div>
