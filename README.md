@@ -19,7 +19,6 @@
 
 </div>
 
----
 
 ## Overview
 
@@ -43,7 +42,6 @@ Rather than relying exclusively on manually constructed searches, the architectu
 
 **Project Status:** Research and development prototype. The repository contains modular agent and processing components, while parts of the live collection and LLM integration workflow remain under development.
 
----
 
 ## Motivation
 
@@ -65,7 +63,6 @@ JobSeek AI Agent explores how an agent-oriented architecture can automate and or
 
 The long-term objective is to develop an intelligent job discovery assistant that can continuously identify, analyze, and organize relevant career opportunities.
 
----
 
 ## Key Features
 
@@ -319,7 +316,6 @@ flowchart TD
 - Generates CSV datasets.
 - Produces Markdown reports.
 
----
 
 ## Technology Stack
 
@@ -355,7 +351,6 @@ These packages are included in the project dependencies. Their integration into 
 - Tenacity
 - Git and GitHub
 
----
 
 ## Repository Structure
 
@@ -437,7 +432,6 @@ jobseek-ai-agent/
 └── utils/
 ```
 
----
 
 ## Installation and Setup
 
@@ -517,7 +511,6 @@ ENABLE_LIEPIN=true
 
 Never commit your actual `.env` file or API credentials to GitHub.
 
----
 
 ## Running the Project
 
@@ -577,7 +570,6 @@ examples/
 
 **Important:** The current orchestrator uses synthetic demonstration content and fallback records. Its output must not be interpreted as a verified collection of real job vacancies.
 
----
 
 ## Example Job Record
 
@@ -603,7 +595,6 @@ The project uses a structured dictionary representation for job information.
 
 The example above is illustrative and does not represent a verified vacancy.
 
----
 
 ## Testing
 
@@ -640,7 +631,6 @@ pytest tests/test_pipeline.py -v
 
 The tests use controlled examples and do not establish that live recruitment-platform scraping works reliably.
 
----
 
 ## Current Implementation Status
 
@@ -664,7 +654,6 @@ The project is under active development.
 
 This distinction is important when evaluating the current capabilities of the repository.
 
----
 
 ## Future Development Roadmap
 
@@ -702,7 +691,6 @@ The following improvements are planned to move the prototype toward a more compl
 - Develop autonomous job monitoring.
 - Introduce human-in-the-loop verification.
 
----
 
 ## Responsible Data Collection
 
@@ -716,7 +704,6 @@ When extending the web collection functionality, ensure that data collection:
 
 The project is intended for research, education, and legitimate job discovery.
 
----
 
 ## Use Cases
 
@@ -730,7 +717,6 @@ Potential applications include:
 - Personalized career recommendation systems.
 - Agentic AI workflow experimentation.
 
----
 
 ## Documentation
 
@@ -742,7 +728,10 @@ Additional project documentation is available in the `docs/` directory.
 | [Workflow](docs/workflow.md) | Step-by-step processing workflow |
 | [Interview Notes](docs/interview_notes.md) | Project overview and technical discussion |
 
----
+## License
+
+Please refer to the [LICENSE](LICENSE) file for the licensing terms of this project.
+
 
 ## Author
 
@@ -758,11 +747,7 @@ Additional project documentation is available in the `docs/` directory.
 
 </div>
 
----
 
-## License
-
-Please refer to the [LICENSE](LICENSE) file for the licensing terms of this project.
 
 ---
 
