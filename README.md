@@ -1,164 +1,373 @@
+
+<div align="center">
+
 # JobSeek AI Agent
-### Autonomous Agentic AI System for AI Engineer Job Discovery
 
-JobSeek AI Agent is an **Agentic AI-powered automation system** that autonomously searches, collects, filters, and structures **AI Engineer campus recruitment and internship job postings** from multiple recruitment platforms. Unlike traditional web crawlers, this system uses **Large Language Models (LLMs)** combined with **tool orchestration and autonomous planning** to perform complex job discovery workflows. The agent can dynamically generate search queries, scrape job listings, analyze job descriptions, extract relevant technical skills, and output structured job datasets. This project demonstrates how **Agentic AI systems can automate real-world information gathering tasks**, showcasing capabilities such as autonomous task planning, tool usage, semantic reasoning, and iterative search optimization.
+### An Agentic Workflow for Intelligent AI Job Discovery and Automation
 
+**AI Job Discovery · Multi-Agent Architecture · Web Automation · Intelligent Data Processing**
 
-# Project Motivation
-Searching for AI Engineer job opportunities across multiple platforms is time-consuming and inefficient. Each recruitment website presents job information differently, requiring manual filtering and comparison. The goal of this project is to build an **intelligent AI agent that automates the entire job search pipeline**, allowing users to automatically collect and organize AI-related job opportunities.
+*Discovering and Organizing AI Career Opportunities Through Autonomous Agent Workflows*
 
-JobSeek AI Agent can automatically:
-- Search multiple recruitment websites
-- Discover AI-related job postings
-- Extract key job information
-- Filter relevant AI Engineer roles
-- Remove duplicate job listings
-- Generate structured job datasets
-This project demonstrates the potential of **Agentic AI architectures in real-world automation scenarios**.
+<br>
 
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python)](https://www.python.org/)
+[![AI](https://img.shields.io/badge/Artificial%20Intelligence-Agentic%20AI-purple.svg)](https://github.com/Miraj-Rahman-AI/jobseek-ai-agent)
+[![Automation](https://img.shields.io/badge/Automation-Web%20Automation-orange.svg)](https://github.com/Miraj-Rahman-AI/jobseek-ai-agent)
+[![License](https://img.shields.io/badge/License-See%20LICENSE-lightgrey.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Miraj-Rahman-AI/jobseek-ai-agent?style=social)](https://github.com/Miraj-Rahman-AI/jobseek-ai-agent)
 
-# Key Features
-## Autonomous Task Planning
+</div>
 
-The agent begins by interpreting the user goal and decomposing it into smaller executable tasks.
+---
 
-Example user goal: ```Find 50 AI Engineer campus recruitment jobs```
+## Overview
 
+**JobSeek AI Agent** is a modular Python-based project designed to explore the application of Agentic AI architectures to automated job discovery, information extraction, and intelligent data organization.
 
-The agent automatically plans the workflow: ```Search → Scrape → Parse → Filter → Deduplicate → Export```
+The system provides an agent-oriented workflow that coordinates multiple specialized components to search for AI-related employment opportunities, process job information, identify relevant technical skills, filter unrelated positions, and generate structured datasets.
 
-This planning capability allows the agent to operate autonomously without manual intervention.
+The project focuses primarily on discovering opportunities in areas such as:
 
+- Artificial Intelligence Engineering
+- Machine Learning Engineering
+- Deep Learning Engineering
+- Natural Language Processing (NLP)
+- Computer Vision
+- Large Language Models (LLMs)
+- Generative AI
+- Algorithm Engineering
+- AI Research and Development
 
-## Multi-Platform Job Discovery
+Rather than relying exclusively on manually constructed searches, the architecture incorporates task planning, query expansion, multi-source search orchestration, heuristic information extraction, and iterative processing.
 
-The agent collects job postings from **multiple recruitment platforms** such as:
+**Project Status:** Research and development prototype. The repository contains modular agent and processing components, while parts of the live collection and LLM integration workflow remain under development.
+
+---
+
+## Motivation
+
+Finding relevant AI engineering opportunities across multiple recruitment platforms can be challenging and time-consuming.
+
+Job descriptions are distributed across different websites, presented in inconsistent formats, and frequently contain unrelated technical information.
+
+Traditional job-search approaches require candidates to:
+
+- Search multiple recruitment platforms individually.
+- Construct different queries for different job categories.
+- Read and compare numerous job descriptions.
+- Identify relevant technical requirements.
+- Extract important skills and qualifications.
+- Organize job information manually.
+- Remove duplicate opportunities.
+
+JobSeek AI Agent explores how an agent-oriented architecture can automate and organize these activities through a modular information-processing workflow.
+
+The long-term objective is to develop an intelligent job discovery assistant that can continuously identify, analyze, and organize relevant career opportunities.
+
+---
+
+## Key Features
+
+### 1. Agent-Based Task Planning
+
+The Planner Agent decomposes a high-level job-search objective into structured search queries and executable workflow steps.
+
+Example objective:
+
+```text
+Find 50 AI Engineer internship and campus recruitment opportunities.
+```
+
+The planner generates initial search queries and defines the processing stages required to achieve the objective.
+
+Current implementation: predefined query templates and deterministic planning logic.
+
+### 2. Multi-Platform Job Discovery
+
+The system includes source-specific search URL construction for several recruitment platforms.
+
+Configured platforms include:
 
 - LinkedIn
 - Indeed
 - Lagou
-- Zhipin
+- Zhipin (Boss直聘)
 - Liepin
-- Company career websites
 
-If one platform fails or returns insufficient results, the agent automatically switches to another source.
+The Search Agent generates search tasks by combining queries with enabled recruitment sources.
 
+Platform accessibility, authentication requirements, and website restrictions may affect data retrieval.
 
-## Iterative Search Strategy
+### 3. Iterative Query Expansion
 
-If the collected job postings are fewer than the required number, the agent dynamically expands its search queries.
+The Query Rewriter Agent expands the original search queries when the number of collected records is below the target.
 
-Example query expansion strategy:
-- AI Engineer
-- Machine Learning Engineer
-- Algorithm Engineer
-- LLM Engineer
-- Deep Learning Engineer
-- Data Scientist
+Example:
 
-This iterative process ensures the agent eventually gathers the required number of job postings.
+```text
+Initial Query:
+AI Engineer Internship
 
+Expanded Queries:
+Machine Learning Engineer Internship
+Deep Learning Engineer Internship
+LLM Engineer Internship
+NLP Engineer Internship
+Computer Vision Engineer Internship
+AI Engineer Campus Recruitment
+```
 
-## LLM-Based Semantic Job Filtering
+The current implementation uses deterministic query expansion rather than autonomous LLM-based query generation.
 
-The system uses **Large Language Models (LLMs)** to determine whether a job posting truly belongs to the AI engineering domain. The classifier analyzes job descriptions and identifies relevant technical domains such as:
+### 4. Job Information Extraction
+
+The Parser Tool provides heuristic-based extraction and normalization of job information.
+
+The intended job record includes:
+
+- Job title
+- Company
+- Location
+- Salary
+- Technical skills
+- Job requirements
+- Recruitment source
+- Job URL
+
+The parser uses HTML processing, text extraction, and predefined patterns.
+
+### 5. AI-Related Job Classification
+
+The Classifier Agent identifies potentially relevant AI engineering opportunities.
+
+The current implementation uses keyword-based classification to identify technical domains such as:
+
 - Machine Learning
 - Deep Learning
 - Natural Language Processing
 - Computer Vision
 - Large Language Models
-- Data Science
-
-This prevents the agent from collecting unrelated roles such as backend engineering or general software development positions.
-
-## Automatic Technical Skill Extraction
-The agent extracts **technical skill tags** from job descriptions using semantic analysis.
-Example extracted skills include:
-- Python
-- PyTorch
-- TensorFlow
-- Transformers
-- NLP
-- Computer Vision
+- Generative AI
 - Recommendation Systems
-These tags help create structured technical skill profiles for each job posting.
 
-## Data Cleaning and Deduplication
-The system automatically cleans and standardizes collected job data by performing:
-- Duplicate job detection
-- Missing data handling
-- Field normalization
-- Structured formatting
-This ensures that the final dataset is clean, consistent, and ready for analysis.
+It also uses non-target role keywords to help filter unrelated positions.
 
-## Structured Output Generation
-The final job dataset is exported in structured formats:
-- JSON
-- CSV
+### 6. Technical Skill Extraction
 
-Example output format:
+The Skill Extractor Agent identifies technical skills from available job information.
 
-```json
-{
-"title": "AI Engineer",
-"company": "Example Tech",
-"location": "Beijing",
-"salary": "20K-35K",
-"tech_tags": ["Python", "PyTorch", "NLP"],
-"requirements": "Experience with machine learning and deep learning frameworks",
-"source": "LinkedIn",
-"job_url": "https://example.com/job"
-}
+Example technical tags:
+
+```text
+Python
+PyTorch
+TensorFlow
+Scikit-learn
+Pandas
+NumPy
+OpenCV
+NLP
+Computer Vision
+LLM
+RAG
+Transformers
+LangChain
+LangGraph
+CUDA
+MLOps
 ```
+
+The current implementation uses a predefined technical vocabulary and keyword matching.
+
+### 7. Data Cleaning and Deduplication
+
+The system includes data-processing components for maintaining consistent job records.
+
+Current capabilities include:
+
+- Duplicate detection using job URLs.
+- Fallback duplicate detection using title, company, and location.
+- Text normalization.
+- Salary normalization.
+- Technical tag normalization.
+- Job record validation.
+
+### 8. Structured Data Export
+
+The Exporter Tool supports generating structured job-search results.
+
+Supported output formats:
+
+| Format | Purpose |
+|---|---|
+| JSON | Machine-readable job records |
+| CSV | Tabular job datasets |
+| Markdown | Human-readable summary reports |
+
+---
 
 ## System Architecture
-JobSeek AI Agent follows an Agentic AI workflow architecture, where an intelligent agent coordinates multiple tools and reasoning modules.
 
-<p align="center">
-  <img src="assets/Agentic Al Job Search System.png" width="95%">
-</p>
+JobSeek AI Agent follows a modular agent-oriented architecture that separates planning, search orchestration, information extraction, classification, and data processing.
 
-# Technology Stack
+### High-Level Architecture
 
-## Programming Language
-- Python
+```mermaid
+flowchart TD
 
-## Agent Frameworks
+    A["User Goal"] --> B["Planner Agent"]
+
+    B --> C["Search Agent"]
+
+    C --> D["Web Search Tool"]
+
+    D --> E["Search Page Retrieval"]
+
+    E --> F["Parser Tool"]
+
+    F --> G["Classifier Agent"]
+
+    G --> H["Skill Extractor Agent"]
+
+    H --> I["Deduplication"]
+
+    I --> J["Exporter Tool"]
+
+    J --> K["JSON Output"]
+
+    J --> L["CSV Output"]
+
+    J --> M["Markdown Report"]
+
+    C --> N["Query Rewriter Agent"]
+
+    N --> C
+
+    O["Pipeline State"] -.-> C
+    O -.-> G
+    O -.-> J
+```
+
+*Note: This diagram represents the intended processing architecture. The current orchestrator does not yet implement complete extraction of individual job listings from recruitment search pages.*
+
+### Architectural Components
+
+| Layer | Components | Responsibility |
+|---|---|---|
+| Agents | Planner, Search, Classifier | Planning and task generation |
+| Agents | Query Rewriter, Skill Extractor | Query expansion and skill identification |
+| Tools | Web Search, Scraper | Web interaction and page retrieval |
+| Tools | Parser, Exporter | Information extraction and output generation |
+| Pipeline | Orchestrator | Workflow coordination |
+| Pipeline | Job Pipeline | Job processing and deduplication |
+| Pipeline | Pipeline State | Execution tracking and logging |
+| Core | Models and Schemas | Structured data representation |
+| Core | Normalizer and Validator | Data consistency and validation |
+| Core | Deduplicator | Duplicate record detection |
+
+### Agent Components
+
+**PlannerAgent**
+- Builds an execution plan.
+- Generates initial search queries.
+- Defines processing steps.
+
+**SearchAgent**
+- Creates search tasks.
+- Distributes queries across enabled sources.
+- Supports page-based task generation.
+
+**ClassifierAgent**
+- Identifies AI-related job postings.
+- Filters potentially irrelevant roles.
+- Provides classification explanations.
+
+**QueryRewriterAgent**
+- Expands existing queries.
+- Generates alternative job-title combinations.
+- Supports iterative search expansion.
+
+**SkillExtractorAgent**
+- Identifies technical skills.
+- Enriches job records with technical tags.
+
+### Tool Components
+
+**WebSearchTool**
+- Constructs source-specific search URLs.
+- Retrieves search-page HTML.
+- Supports batch search URL generation.
+
+**ScraperTool**
+- Fetches webpage HTML.
+- Extracts readable webpage content.
+- Identifies hyperlinks.
+
+**ParserTool**
+- Parses job-related information.
+- Extracts selected fields using heuristic methods.
+- Normalizes job records.
+
+**SiteRouterTool**
+- Manages enabled recruitment sources.
+- Generates query-source routing tasks.
+- Provides basic fallback source selection.
+
+**ExporterTool**
+- Generates JSON datasets.
+- Generates CSV datasets.
+- Produces Markdown reports.
+
+---
+
+## Technology Stack
+
+### Programming Language
+
+- Python 3.10+
+
+### Agent and LLM Ecosystem
+
 - LangChain
 - LangGraph
-- OpenAI Tool Calling
-- ReAct Agents
+- OpenAI API
 
-## Web Data Collection
-- Selenium
-- BeautifulSoup
+These packages are included in the project dependencies. Their integration into the current execution workflow remains a development objective.
+
+### Web Data Collection
+
 - Requests
+- BeautifulSoup4
+- Selenium (dependency included; browser automation is not currently integrated into the main workflow)
 
-## Data Processing
+### Data Processing
+
 - Pandas
-- Regex
+- Pydantic
+- Regular Expressions
 - JSON
 
-## AI Models
-- OpenAI GPT
-- Local LLMs (optional)
+### Development and Testing
 
+- Pytest
+- Python-dotenv
+- Tenacity
+- Git and GitHub
+
+---
 
 ## Repository Structure
-```
+
+```text
 jobseek-ai-agent/
 │
 ├── README.md
+├── LICENSE
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
 ├── main.py
-├── assets/
-│   └── Automated Pipeline for Finding Al Engineer Jobs.png
-│
-├── config/
-│   ├── settings.py
-│   └── constants.py
 │
 ├── agents/
 │   ├── __init__.py
@@ -168,6 +377,55 @@ jobseek-ai-agent/
 │   ├── query_rewriter_agent.py
 │   └── skill_extractor_agent.py
 │
+├── assets/
+│   └── Agentic Al Job Search System.png
+│
+├── config/
+│   ├── settings.py
+│   └── constants.py
+│
+├── core/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── deduplicator.py
+│   ├── normalizer.py
+│   └── validators.py
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── sample/
+│
+├── docs/
+│   ├── architecture.md
+│   ├── workflow.md
+│   └── interview_notes.md
+│
+├── examples/
+│   ├── demo_run.py
+│   └── example_output.json
+│
+├── output/
+│   ├── jobs.json
+│   ├── jobseek_ai_50_jobs.csv
+│   └── report.md
+│
+├── pipeline/
+│   ├── __init__.py
+│   ├── orchestrator.py
+│   ├── job_pipeline.py
+│   └── state.py
+│
+├── prompts/
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_agents.py
+│   ├── test_deduplication.py
+│   ├── test_parser.py
+│   └── test_pipeline.py
+│
 ├── tools/
 │   ├── __init__.py
 │   ├── web_search_tool.py
@@ -176,139 +434,344 @@ jobseek-ai-agent/
 │   ├── exporter_tool.py
 │   └── site_router_tool.py
 │
-├── pipeline/
-│   ├── __init__.py
-│   ├── job_pipeline.py
-│   ├── orchestrator.py
-│   └── state.py
-│
-├── core/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── deduplicator.py
-│   ├── validators.py
-│   └── normalizer.py
-│
-├── prompts/
-│   ├── classify_job.txt
-│   ├── extract_skills.txt
-│   └── rewrite_query.txt
-│
-├── utils/
-│   ├── logger.py
-│   ├── helpers.py
-│   ├── retry.py
-│   └── io.py
-│
-├── data/
-│   ├── raw/
-│   │   └── jobs_raw.json
-│   ├── processed/
-│   │   └── jobs_clean.json
-│   └── sample/
-│       └── sample_jobs.json
-│
-├── output/
-│   ├── jobs.csv
-│   ├── jobs.json
-│   └── report.md
-│
-├── tests/
-├── __init__.py
-├── test_agents.py
-├── test_parser.py
-├── test_deduplication.py
-└── test_pipeline.py
-│
-├── examples/
-│   ├── demo_run.py
-│   └── example_output.json
-│
-└── docs/
-    ├── architecture.md
-    ├── workflow.md
-    └── interview_notes.md
+└── utils/
 ```
 
-## Installation
-Clone the repository:
-```
-git clone https://github.com/Miraj-Rahman-AI/Adv-AI-Agents/edit/main/jobseek-ai-agent.git
+---
+
+## Installation and Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Miraj-Rahman-AI/jobseek-ai-agent.git
+
 cd jobseek-ai-agent
 ```
-Create a virtual environment:
+
+### 2. Create a Virtual Environment
+
+```bash
+python3 -m venv .venv
 ```
-python -m venv venv
+
+### 3. Activate the Virtual Environment
+
+**macOS / Linux**
+
+```bash
+source .venv/bin/activate
 ```
-Activate the environment:
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
 ```
-source venv/bin/activate
-```
-Install dependencies:
-```
+
+### 4. Install Dependencies
+
+```bash
+python -m pip install --upgrade pip
+
 pip install -r requirements.txt
 ```
-### Running the Agent
-Run the autonomous job search system:
+
+### 5. Configure Environment Variables
+
+Create your local environment configuration:
+
+```bash
+cp .env.example .env
 ```
+
+Open `.env` and configure the required settings.
+
+```env
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4o-mini
+OPENAI_TEMPERATURE=0.2
+
+# Search Configuration
+TARGET_JOB_COUNT=50
+MAX_ITERATIONS=10
+REQUEST_TIMEOUT=20
+
+# Output Configuration
+OUTPUT_JSON=output/jobs.json
+OUTPUT_CSV=output/jobs.csv
+
+# Scraper Configuration
+HEADLESS=true
+
+# Recruitment Platform Configuration
+ENABLE_LINKEDIN=false
+ENABLE_INDEED=true
+ENABLE_LAGOU=true
+ENABLE_ZHIPIN=true
+ENABLE_LIEPIN=true
+```
+
+**Note:** The OpenAI API configuration is provided for future LLM integration. The currently implemented rule-based workflow does not require an OpenAI API call.
+
+Never commit your actual `.env` file or API credentials to GitHub.
+
+---
+
+## Running the Project
+
+There are currently two execution entry points.
+
+### Option 1: Basic Demonstration
+
+Run:
+
+```bash
 python main.py
 ```
-The agent will automatically perform the following steps:
-- Generate job search queries
-- Collect job postings from multiple platforms
-- Filter AI-related job roles
-- Extract structured job information
-- Remove duplicate listings
-- Export results as structured datasets
 
-Generated datasets will be saved in:
+This entry point executes the placeholder pipeline and exports two hard-coded demonstration job records.
+
+Generated files:
+
+```text
+output/
+├── jobs.json
+└── jobs.csv
 ```
-output/jobs.csv
-output/jobs.json
+
+### Option 2: Agent Orchestration Demonstration
+
+Run:
+
+```bash
+python examples/demo_run.py
 ```
-## Example Output
-Example job entry:
+
+This entry point invokes the `JobSeekOrchestrator` and demonstrates the modular processing workflow.
+
+The execution includes:
+
+1. Building an initial execution plan.
+2. Generating search tasks.
+3. Attempting to retrieve recruitment search pages.
+4. Processing demonstration or fallback page content.
+5. Parsing job records.
+6. Applying rule-based classification.
+7. Extracting technical tags.
+8. Removing duplicate records.
+9. Exporting structured results.
+
+Generated files:
+
+```text
+output/
+├── jobs.json
+├── jobs.csv
+└── report.md
+
+examples/
+└── example_output.json
 ```
-Title: AI Engineer
-Company: Tencent
-Location: Shenzhen
-Salary: 25K-40K
-Tech Tags: Python, PyTorch, NLP, Transformers
-Source: Lagou
-URL: https://example-job-url
+
+**Important:** The current orchestrator uses synthetic demonstration content and fallback records. Its output must not be interpreted as a verified collection of real job vacancies.
+
+---
+
+## Example Job Record
+
+The project uses a structured dictionary representation for job information.
+
+```json
+{
+  "title": "AI Engineer Intern",
+  "company": "Example Technology",
+  "location": "Beijing",
+  "salary": "15K-20K",
+  "tech_tags": [
+    "Python",
+    "PyTorch",
+    "NLP",
+    "LLM"
+  ],
+  "requirements": "Experience with machine learning and deep learning.",
+  "source": "indeed",
+  "job_url": "https://example.com/job/1"
+}
 ```
-# Agent Capabilities Demonstrated
-This project demonstrates several core **Agentic AI capabilities**:
-- Autonomous task planning
-- External tool orchestration
-- LLM-powered semantic reasoning
-- Iterative query optimization
-- Multi-source information aggregation
-- Structured data generation
 
-# Possible Extensions
-Future improvements could include:
-- Real-time job monitoring agents
-- AI-powered job recommendation systems
-- Resume-job matching automation
-- Skill gap analysis for candidates
-- Multi-language job discovery
-- Autonomous job application assistants
+The example above is illustrative and does not represent a verified vacancy.
 
+---
 
-# Use Cases
-- Automated job search assistants
-- AI recruitment intelligence tools
-- Career analytics platforms
-- Agentic AI research experiments
+## Testing
 
+The repository includes unit tests for several core components.
 
-#  Author
-**[Miraj Rahman](https://github.com/Miraj-Rahman-AI)**  
-AI Researcher | Autonomous Agents | RAG Systems | Trustworthy AI
+Test coverage includes:
 
+- Agent planning and task generation.
+- AI-related job classification.
+- Query expansion.
+- Technical skill extraction.
+- Job information parsing.
+- Duplicate detection.
+- Pipeline state management.
+- Job processing.
 
-#  Support
-If this project supports your research or learning,
-please consider giving it a ⭐ on GitHub.
+Run the test suite:
+
+```bash
+pytest -q
+```
+
+To run individual test modules:
+
+```bash
+pytest tests/test_agents.py -v
+
+pytest tests/test_parser.py -v
+
+pytest tests/test_deduplication.py -v
+
+pytest tests/test_pipeline.py -v
+```
+
+The tests use controlled examples and do not establish that live recruitment-platform scraping works reliably.
+
+---
+
+## Current Implementation Status
+
+The project is under active development.
+
+| Component | Current implementation |
+|---|---|
+| Planner Agent | Predefined query planning |
+| Search Agent | Multi-source task generation |
+| Query Rewriter | Rule-based query expansion |
+| Classifier Agent | Keyword-based classification |
+| Skill Extractor | Vocabulary-based extraction |
+| Web Search Tool | Search URL generation and HTTP retrieval |
+| Scraper Tool | Generic HTML retrieval |
+| Parser Tool | Heuristic-based parsing |
+| Deduplicator | URL and record-signature matching |
+| Exporter | JSON, CSV, Markdown |
+| LLM Integration | Not connected to the current workflow |
+| Individual Job Detail Extraction | Requires further implementation |
+| Selenium Browser Automation | Not integrated into the main workflow |
+
+This distinction is important when evaluating the current capabilities of the repository.
+
+---
+
+## Future Development Roadmap
+
+The following improvements are planned to move the prototype toward a more complete autonomous job discovery system.
+
+### Phase 1: Advanced Web Data Collection
+
+- Implement platform-specific job listing extractors.
+- Extract individual job URLs from search results.
+- Retrieve actual job detail pages.
+- Improve HTML parsing and dynamic-content handling.
+- Introduce robust retry and error-handling mechanisms.
+
+### Phase 2: LLM-Based Agent Intelligence
+
+- Integrate OpenAI models into the Planner Agent.
+- Introduce LLM-based semantic job classification.
+- Implement context-aware query rewriting.
+- Improve technical skill extraction using LLMs.
+- Develop intelligent job-description summarization.
+
+### Phase 3: Advanced Job Intelligence
+
+- Implement semantic job ranking.
+- Introduce personalized job recommendations.
+- Develop resume-to-job matching.
+- Perform technical skill-gap analysis.
+- Support multi-language job discovery.
+
+### Phase 4: Advanced Agentic Automation
+
+- Integrate LangGraph-based agent orchestration.
+- Introduce persistent agent memory.
+- Implement scheduled job discovery.
+- Develop autonomous job monitoring.
+- Introduce human-in-the-loop verification.
+
+---
+
+## Responsible Data Collection
+
+When extending the web collection functionality, ensure that data collection:
+
+- Respects the terms of service of recruitment platforms.
+- Follows applicable website access policies and rate limits.
+- Avoids unauthorized access and authentication circumvention.
+- Minimizes unnecessary collection of personal information.
+- Handles collected employment information responsibly.
+
+The project is intended for research, education, and legitimate job discovery.
+
+---
+
+## Use Cases
+
+Potential applications include:
+
+- Automated AI job discovery.
+- Internship and campus recruitment monitoring.
+- AI engineering career research.
+- Recruitment information aggregation.
+- Technical skill analysis.
+- Personalized career recommendation systems.
+- Agentic AI workflow experimentation.
+
+---
+
+## Documentation
+
+Additional project documentation is available in the `docs/` directory.
+
+| Document | Description |
+|---|---|
+| [Architecture](docs/architecture.md) | System architecture and component design |
+| [Workflow](docs/workflow.md) | Step-by-step processing workflow |
+| [Interview Notes](docs/interview_notes.md) | Project overview and technical discussion |
+
+---
+
+## Author
+
+<div align="center">
+
+### Mahabubur Rahman Miraj
+
+**AI Researcher | Agentic AI | LLM Systems | Trustworthy AI**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Miraj--Rahman--AI-181717?logo=github)](https://github.com/Miraj-Rahman-AI)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://www.linkedin.com/in/miraj-rahman-ai/)
+
+</div>
+
+---
+
+## License
+
+Please refer to the [LICENSE](LICENSE) file for the licensing terms of this project.
+
+---
+
+<div align="center">
+
+**JobSeek AI Agent**
+
+*Exploring Intelligent Career Discovery Through Agentic AI.*
+
+If you find this project useful for learning, research, or development, consider giving it a ⭐.
+
+</div>
